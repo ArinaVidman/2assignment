@@ -1,6 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navigation from '../components/Navigation.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 
 // Retrieve cookies and handle redirection.
@@ -18,8 +17,7 @@ if (accessToken && refreshToken) {
 }
 ---
 
-<Layout title="Sign in">
-  <Navigation />
+<BaseLayout title="Sign in">
 
   <!-- Page Heading -->
   <h1>Sign in</h1>
