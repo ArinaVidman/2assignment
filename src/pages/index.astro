@@ -1,13 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle="Home Page";
 ---
 
-<Layout>
-	<Navigation />
+<BaseLayout pageTitle={pageTitle}>
+
   
-	<!-- Page Heading -->
-	<h1>
-	  Welcome to week 11 of Web Frameworks, here's a demo on how to login and register
-	</h1>
-  </Layout>
+	<h2>Welcome to StoryNest – Your Stories Matter</h2>
+	<p>Share your voice, connect with others, and explore endless ideas.</p>
+	<p>Join our community <a href="/sign">here</a></p>
+		
+	
+	</BaseLayout> 
