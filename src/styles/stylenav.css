@@ -1,0 +1,8 @@
+.nav a {
+    border: solid 1px #FE912B;
+    padding: 0.5rem 1rem;
+    margin: 2rem;
+    color: #FE912B;
+    border-radius: 1rem;
+    background-color: transparent;
+}

@@ -1,0 +1,17 @@
+@font-face {
+    font-family:'Junction';
+    src: url('fonts/junction-master/junction-regular.woff') format ('woff');
+    font-weight: 400;
+    font-style:normal;
+   }
+   
+   body {
+       margin: 0rem;
+       font-family: 'Junction';
+       font-weight: 400;
+       background-color:rgb(248, 248, 245);
+       color:   #191A1C;
+       display:flex;
+       flex-direction: column;
+       align-items: center;
+   }
