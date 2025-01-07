@@ -17,7 +17,6 @@ export const GET: APIRoute = async ({ cookies, redirect }) => {
   cookies.delete("sb-refresh-token", { path: "/" }); // Remove refresh token.
 
 
-
   // Redirect the user to the "/signin" page after logout.
   return redirect("/signin");
 };

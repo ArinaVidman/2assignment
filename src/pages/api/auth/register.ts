@@ -17,12 +17,13 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const formData = await request.formData();
   const email = formData.get("email")?.toString(); // Retrieve the 'email' field.
   const password = formData.get("password")?.toString(); // Retrieve the 'password' field.
+  const userName = formData.get("name")?.toString(); 
 
 
 
   // Validate inputs: Ensure email and password are provided.
-  if (!email || !password) {
-    return new Response("Email and password are required", { status: 400 }); // Respond with a 400 error if missing.
+  if (!userName || !email || !password) {
+    return new Response("Name, email and password are required", { status: 400 }); // Respond with a 400 error if missing.
   }
 
 
@@ -39,7 +40,6 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   if (error) {
     return new Response(error.message, { status: 500 }); // Respond with a 500 error if sign-up fails.
   }
-
 
 
   // Redirect the user to the "/signin" page upon successful sign-up.

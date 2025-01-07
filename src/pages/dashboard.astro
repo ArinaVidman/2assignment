@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/styledash.css';
 import { supabase } from "../lib/supabase";
 
 
@@ -63,6 +64,19 @@ const email = session.data.user?.email;
   <img src="/welcome.webp" alt="Welcome" />
   <p>We're glad to see you today</p>
   <p>Explore Stories by Our Community and create your own:</p>
+  <ul id="postfeed">
+    <li>Add new story</li>
+  </ul>
+  
+  <form>
+    <label for="name">Tell your story:</label>
+    <input type="text" id="name" placeholder="Type your story here">
+    <button id="post" type="submit" class="buttonpost">Post</button>
+  </form>
+  <script src="../js/posts.js"></script>
+
+  <form action="/api/auth/register" method="post">
+    
 
   <!-- Sign-Out Form -->
   <form action="/api/auth/signout">
