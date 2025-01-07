@@ -1,3 +1,32 @@
 footer {
-    background-color: #FE912B;
+    border: solid 1px #FE912B;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-family: 'Junction';
+       font-weight: 400;
+    display:flex;
+       flex-direction: column;
+       align-items: center;
+       margin-top: 4rem;
+       margin-bottom: 1rem;
+}
+
+.footerbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer ul li {
+    text-decoration: none;
+    margin: 0 1rem;
+    list-style-type: none;
+}
+
+footer ul li a img {
+    height: 30px;
 }
