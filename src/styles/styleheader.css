@@ -1,0 +1,26 @@
+header {
+    background-color: rgb(248, 248, 245);
+    color: #191A1C;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header img {
+    height: 60px;
+    margin-bottom: 3rem;
+}
+
+
+header nav a {
+    text-decoration: none;
+    text-transform: lowercase;
+
+}
+
+header nav a:hover {
+    color: rgb(248, 248, 245);
+    background-color: #FE912B;
+}
+
