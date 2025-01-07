@@ -60,10 +60,11 @@ const email = session.data.user?.email;
 <BaseLayout title="dashboard">
 
   <!-- Dashboard Welcome Message -->
-  <h1>Welcome user with email address: {email}</h1>
-  <img src="/welcome.webp" alt="Welcome" />
+  <h1>Hello, {email}!</h1>
+  <img src="/welcome.svg" alt="Welcome" />
   <p>We're glad to see you today</p>
   <p>Explore Stories by Our Community and create your own:</p>
+  
   <ul id="postfeed">
     <li>Add new story</li>
   </ul>
