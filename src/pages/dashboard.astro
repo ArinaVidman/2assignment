@@ -64,12 +64,11 @@ const email = session.data.user?.email;
   <img src="/welcome.svg" alt="Welcome" />
   <p>We're glad to see you today</p>
   <p>Explore Stories by Our Community and create your own:</p>
-  
+
   <ul id="postfeed">
-    <li>Add new story</li>
   </ul>
   
-  <form>
+  <form action="/api/posts" method="post">
     <label for="name">Tell your story:</label>
     <input type="text" id="name" placeholder="Type your story here">
     <button id="post" type="submit" class="buttonpost">Post</button>
@@ -81,6 +80,6 @@ const email = session.data.user?.email;
 
   <!-- Sign-Out Form -->
   <form action="/api/auth/signout">
-    <button type="submit">Sign Me Out</button>
+    <button type="submit" class="out">Sign Me Out</button>
   </form>
 </BaseLayout>
