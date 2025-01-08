@@ -16,4 +16,39 @@
        align-items: center;
    }
 
+.registerbutton {
+    background-color: #FE912B; 
+    border-radius: 2rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    color:white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    border: none;
+    text-transform: uppercase;
+    width: 50%;
+    align-self: center;
+}
 
+.registerform {
+    display: flex;
+    flex-direction: column;
+}
+
+.registerform input {
+    width: 100%;
+    border-radius: 1rem;
+    border: solid 1px #FE912B;
+    height: 30px;
+}
+
+.emailform {
+    margin: 0.5rem;
+}
+
+.nameform {
+    margin: 0.5rem;
+}
+
+.passform {
+    margin: 0.5rem;
+    margin-bottom: 2rem;
+}
