@@ -68,14 +68,14 @@ const email = session.data.user?.email;
   <ul id="postfeed">
   </ul>
   
-  <form action="/api/posts" method="post">
+  <form action="/api/auth/posts" method="post">
+    <label for="title">Title of your story:</label>
+    <input type="text" id="title" placeholder="Title">
     <label for="name">Tell your story:</label>
     <input type="text" id="name" placeholder="Type your story here">
     <button id="post" type="submit" class="buttonpost">Post</button>
   </form>
-  <script src="../js/posts.js"></script>
 
-  <form action="/api/auth/register" method="post">
     
 
   <!-- Sign-Out Form -->
