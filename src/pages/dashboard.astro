@@ -10,6 +10,17 @@ const accessToken = Astro.cookies.get("sb-access-token");
 const refreshToken = Astro.cookies.get("sb-refresh-token");
 
 
+type Posts = {
+  context: string;
+}
+// Fetch posts from Supabase
+const posts = await supabase
+  .from('posts')
+  .select('content, title')
+// const posts2: Posts[]  = await posts.data
+// console.log("posts2 -> " + posts2 )
+
+
 
 // Redirect to sign-in if tokens are missing.
 if (!accessToken || !refreshToken) {
@@ -65,17 +76,32 @@ const email = session.data.user?.email;
   <p>We're glad to see you today</p>
   <p>Explore Stories by Our Community and create your own:</p>
 
-  <ul id="postfeed">
-  </ul>
-  
-  <form action="/api/auth/posts" method="post">
-    <label for="title">Title of your story:</label>
-    <input type="text" id="title" placeholder="Title">
-    <label for="name">Tell your story:</label>
-    <input type="text" id="name" placeholder="Type your story here">
-    <button id="post" type="submit" class="buttonpost">Post</button>
-  </form>
+   <!--
+  <form id="postsHistory">
+    <label for="postsHistory">Our posts:</label>
+    <input type="text" name="postsHistory" id="postsHistory" value={posts2} placeholder="our posts" />
+    </form>
+-->
 
+ <h2>Posts</h2>
+
+{
+  posts.data?.map(({ title,content }) => (
+    <article>
+      <p>Title: {title}</p>
+      <p>{content}</p>
+    </article>
+  ))
+}
+
+  <form action="/api/auth/posts" method="post"> 
+
+    <label for="postTitle">Title:</label> 
+    <input type="text" name="postTitle" id="postTitle" placeholder="Type title here"> 
+    <label for="postContext">Tell your story:</label> 
+    <input type="text" name="postContext" id="postContext" placeholder="Type your story here"> 
+    <button id="post" type="submit" class="buttonpost">Post</button> 
+  </form>
     
 
   <!-- Sign-Out Form -->

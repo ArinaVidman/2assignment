@@ -17,7 +17,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const formData = await request.formData();
   const email = formData.get("email")?.toString(); // Retrieve the 'email' field.
   const password = formData.get("password")?.toString(); // Retrieve the 'password' field.
-  const userName = formData.get("name")?.toString(); 
+  const userName = formData.get("userName")?.toString(); 
 
 
 
