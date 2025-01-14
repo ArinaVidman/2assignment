@@ -15,8 +15,8 @@ type Posts = {
 }
 // Fetch posts from Supabase
 const posts = await supabase
-  .from('posts')
-  .select('content, title')
+  .from('v_posts')
+  .select('content, title, author_email, updated_at')
 // const posts2: Posts[]  = await posts.data
 // console.log("posts2 -> " + posts2 )
 
@@ -86,10 +86,11 @@ const email = session.data.user?.email;
  <h2>Posts</h2>
 
 {
-  posts.data?.map(({ title,content }) => (
+  posts.data?.map(({ title,content, author_email, updated_at}) => (
     <article>
-      <p>Title: {title}</p>
+      <p>Title and Author: {title} {author_email}</p>
       <p>{content}</p>
+      <p>Posted: {updated_at}</p>
     </article>
   ))
 }
