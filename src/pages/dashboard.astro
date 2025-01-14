@@ -76,14 +76,7 @@ const email = session.data.user?.email;
   <p>We're glad to see you today</p>
   <p>Explore Stories by Our Community and create your own:</p>
 
-   <!--
-  <form id="postsHistory">
-    <label for="postsHistory">Our posts:</label>
-    <input type="text" name="postsHistory" id="postsHistory" value={posts2} placeholder="our posts" />
-    </form>
--->
-
- <h2>Posts</h2>
+ <h2>Latest Posts</h2>
 
 {
   posts.data?.map(({ title,content, author_email, updated_at}) => (
