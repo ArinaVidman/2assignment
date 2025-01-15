@@ -17,7 +17,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const formData = await request.formData();
   const email = formData.get("email")?.toString(); // Retrieve the 'email' field.
   const password = formData.get("password")?.toString(); // Retrieve the 'password' field.
-  const userName = formData.get("userName")?.toString(); 
+  const userName = formData.get("userName")?.toString();
+  const userLastName = formData.get("userLastName")?.toString(); 
 
 
 
@@ -32,7 +33,13 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const { error } = await supabase.auth.signUp({
     email,
     password,
-  });
+    options: {
+      data: {
+        first_name: userName,
+        last_name: userLastName
+      },
+  }
+});
 
 
 
@@ -40,7 +47,10 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   if (error) {
     return new Response(error.message, { status: 500 }); // Respond with a 500 error if sign-up fails.
   }
+   
+  
 
+        
 
   // Redirect the user to the "/signin" page upon successful sign-up.
   return redirect("/signin");
