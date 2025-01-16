@@ -21,6 +21,9 @@ const posts = await supabase
 // console.log("posts2 -> " + posts2 )
 
 
+const comments = await supabase
+  .from('comments')
+  .select('content')
 
 // Redirect to sign-in if tokens are missing.
 if (!accessToken || !refreshToken) {
@@ -88,6 +91,14 @@ const email = session.data.user?.email;
   ))
 }
 
+{
+  comments.data?.map(({content}) => (
+    <article>
+      <p class="content">{content}</p>
+    </article>
+  ))
+}
+
 
   <form action="/api/auth/posts" method="post"> 
 
@@ -98,6 +109,11 @@ const email = session.data.user?.email;
     <button id="post" type="submit" class="buttonpost">Post</button> 
   </form>
     
+  <form action="/api/auth/comments" method="post"> 
+    <label for="postTitle">Your comments:</label> 
+    <input type="text" name="commentContext" id="commentContext" placeholder="Type your comment here"> 
+    <button id="comment" type="submit" class="buttonpost">Comment</button> 
+  </form>
 
   <!-- Sign-Out Form -->
   <form action="/api/auth/signout">
