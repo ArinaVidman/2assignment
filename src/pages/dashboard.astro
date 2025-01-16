@@ -68,9 +68,9 @@ const email = session.data.user?.email;
 
 
 
-<BaseLayout title="dashboard">
+<BaseLayout title="homepage">
 
-  <!-- Dashboard Welcome Message -->
+  <!-- Home page Welcome Message -->
   <h1>Hello, {email}!</h1>
   <img src="/welcome.svg" alt="Welcome" />
   <p>We're glad to see you today</p>
@@ -79,14 +79,15 @@ const email = session.data.user?.email;
  <h2>Latest Posts</h2>
 
 {
-  posts.data?.map(({ title,content, author_email, updated_at, first_name, last_name}) => (
+  posts.data?.map(({ title,content, updated_at, first_name, last_name}) => (
     <article>
-      <p>Title and Author: {title} {author_email}</p>
-      <p>{content}</p>
-      <p>Posted: {updated_at} {first_name} {last_name}</p>
+      <p class ="title">Title: {title}</p>
+      <p class="content">{content}</p>
+      <p class ="datauthor">Posted by: {first_name} {last_name} {updated_at} </p>
     </article>
   ))
 }
+
 
   <form action="/api/auth/posts" method="post"> 
 

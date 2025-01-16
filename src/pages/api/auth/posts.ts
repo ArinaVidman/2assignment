@@ -41,4 +41,4 @@ const { data, error } = await supabase
   // Redirect the user to the "/signin" page upon successful sign-up.
   return redirect("/signin");
 };
-          
+        
